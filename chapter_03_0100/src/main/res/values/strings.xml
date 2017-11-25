@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">chapter_03_0100</string>
+    <string name="open_link"><a>打开连接</a></string>
 </resources>
