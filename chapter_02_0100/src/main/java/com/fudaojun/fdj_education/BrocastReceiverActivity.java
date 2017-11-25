@@ -1,6 +1,5 @@
 package com.fudaojun.fdj_education;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
@@ -9,13 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class BrocastReceiverActivity extends AppCompatActivity implements View.OnClickListener {
-
-
     Button btnNormalBr;
     Button btnOrderedBr;
 
