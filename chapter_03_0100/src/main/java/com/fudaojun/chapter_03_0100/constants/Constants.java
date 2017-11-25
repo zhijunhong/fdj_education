@@ -8,6 +8,7 @@ public class Constants {
     public static final String TRANSFORM = "TRANSFORM";
     public static final String TRANSFORM_OBJECT = "TRANSFORM_OBJECT";
     public static final String BUNDLE = "BUNDLE";
+    public static final String GOBACK_MAIN = "GOBACK_MAIN";
 
     public static class TencentConstant {
         //QQ 包名

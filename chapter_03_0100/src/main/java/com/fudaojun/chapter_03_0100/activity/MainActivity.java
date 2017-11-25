@@ -40,19 +40,35 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_transform_data_next://向下一个活动传递数据
                 Intent intent4 = new Intent(this, FouthActivity.class);
-                intent4.putExtra(Constants.TRANSFORM,"我是传递的内容！");
+                intent4.putExtra(Constants.TRANSFORM, "我是传递的内容！");
                 Bundle bundle = new Bundle();
-                bundle.putParcelable(Constants.TRANSFORM_OBJECT,new User("fudaojun","123456"));
+                bundle.putParcelable(Constants.TRANSFORM_OBJECT, new User("fudaojun", "123456"));
                 intent4.putExtra(Constants.BUNDLE, bundle);
                 startActivity(intent4);
                 break;
             case R.id.btn_transform_data_preview://返回数据给上一个活动
-
+                Intent intent5 = new Intent(this, FifthActivity.class);
+                startActivityForResult(intent5, 100);
                 break;
             case R.id.tv_webview:  //打开连接-Intent传递参数
                 Uri uri = Uri.parse("http://www.baidu.com");
                 Intent intent3 = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent3);
+                break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case 100:
+                if (resultCode == RESULT_OK) {
+                    String returnData = data.getStringExtra(Constants.GOBACK_MAIN);
+                    Toast.makeText(this, returnData, Toast.LENGTH_LONG).show();
+                }
+                break;
+            default:
                 break;
         }
     }

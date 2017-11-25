@@ -19,14 +19,16 @@
         <activity android:name=".activity.SecondActivity"/>
 
         <activity android:name=".activity.ThirdActivity">
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="com.fudaojun.MY_CATEGORY"/>
             </intent-filter>
         </activity>
 
         <activity android:name=".activity.FouthActivity"/>
+        <activity android:name=".activity.FifthActivity"/>
     </application>
 
 </manifest>
