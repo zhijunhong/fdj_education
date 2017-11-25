@@ -1,4 +1,4 @@
-package com.fudaojun.chapter_03_0100;
+package com.fudaojun.chapter_03_0100.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.fudaojun.chapter_03_0100.R;
 import com.fudaojun.chapter_03_0100.constants.Constants;
+import com.fudaojun.chapter_03_0100.entity.User;
 
 import java.io.File;
 
@@ -37,8 +39,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
                 break;
             case R.id.btn_transform_data_next://向下一个活动传递数据
+                Intent intent4 = new Intent(this, FouthActivity.class);
+                intent4.putExtra(Constants.TRANSFORM,"我是传递的内容！");
+                Bundle bundle = new Bundle();
+                bundle.putParcelable(Constants.TRANSFORM_OBJECT,new User("fudaojun","123456"));
+                intent4.putExtra(Constants.BUNDLE, bundle);
+                startActivity(intent4);
                 break;
             case R.id.btn_transform_data_preview://返回数据给上一个活动
+
                 break;
             case R.id.tv_webview:  //打开连接-Intent传递参数
                 Uri uri = Uri.parse("http://www.baidu.com");
