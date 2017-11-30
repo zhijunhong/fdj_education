@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         //从数据库获取数据
         mFooDataFromDB = mFooModel.getFooDataFromDB();
         //比较结果
-        compareData(mNewestFooData, mFooDataFromDB);
+        compareFooData(mNewestFooData, mFooDataFromDB);
 
     }
 
@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
      * @param newestFooData
      * @param fooDataFromDB
      */
-    private void compareData(Foo newestFooData, Foo fooDataFromDB) {
+    private void compareFooData(Foo newestFooData, Foo fooDataFromDB) {
         //显示结果
-        showResult(mFooDataFromDB.equals(fooDataFromDB));
+        showFooDataResult(mFooDataFromDB.equals(fooDataFromDB));
     }
 
     /**
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param equals
      */
-    private void showResult(boolean equals) {
+    private void showFooDataResult(boolean equals) {
         if (equals) {
             mTvVersion.setText("已经是最新数据");
         } else {
