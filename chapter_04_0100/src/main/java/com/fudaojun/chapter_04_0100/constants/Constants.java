@@ -6,4 +6,5 @@ package com.fudaojun.chapter_04_0100.constants;
 
 public class Constants {
     public  static final String SP_KEY="SP_KEY";
+
 }
