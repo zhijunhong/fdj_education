@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class OrderedBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        Toast.makeText(context,"我是有序广播，我是动态注册的",Toast.LENGTH_SHORT).show();
+        Toast.makeText(context,"我是有序广播，我是静态注册的~",Toast.LENGTH_SHORT).show();
         Log.i("receiver","ordered");
     }
 }

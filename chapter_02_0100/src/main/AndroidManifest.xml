@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".BrocastReceiverActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -18,7 +18,7 @@
         </activity>
         <receiver android:name=".OrderedBroadcastReceiver">
             <intent-filter android:priority="100">
-                <action android:name="com.app.bc.test"></action>
+                <action android:name="com.app.nbc.test"></action>
             </intent-filter>
         </receiver>
     </application>

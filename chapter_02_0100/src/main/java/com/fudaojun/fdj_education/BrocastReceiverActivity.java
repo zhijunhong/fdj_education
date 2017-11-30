@@ -4,45 +4,47 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import utils.LibUtils;
 
 public class BrocastReceiverActivity extends AppCompatActivity implements View.OnClickListener {
+    @BindView(R.id.btn_normal_br)
     Button btnNormalBr;
+    @BindView(R.id.btn_ordered_br)
     Button btnOrderedBr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_brocast_receiver);
         ButterKnife.bind(this);
-        //最早注册的优先级越高
-        MyBroadcastReceiver oReceiver=new MyBroadcastReceiver();
-        IntentFilter filter=new IntentFilter();
-        filter.addAction("com.app.nbc.test");
-        this.registerReceiver(oReceiver,filter);
+
+        MyBroadcastReceiver oReceiver = new MyBroadcastReceiver();
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("com.app.bc.test");
+        this.registerReceiver(oReceiver, filter);
         init();
     }
 
-    public void init(){
-        btnNormalBr=(Button)findViewById(R.id.btn_normal_br);
+    public void init() {
         btnNormalBr.setOnClickListener(this);
-        btnOrderedBr=(Button)findViewById(R.id.btn_ordered_br);
         btnOrderedBr.setOnClickListener(this);
     }
+
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_normal_br:
-                Intent intent = new Intent("com.app.nbc.test");
-                Log.i("receiver","start");
-                sendBroadcast(intent);
+                Intent intent2 = new Intent("com.app.nbc.test");
+                sendOrderedBroadcast(intent2, null);
                 break;
             case R.id.btn_ordered_br:
-                Intent intent2 = new Intent("com.app.bc.test");
-                sendOrderedBroadcast(intent2,null);
+                Intent intent = new Intent("com.app.bc.test");
+                LibUtils.myLog("receiver", "start");
+                sendBroadcast(intent);
                 break;
         }
     }

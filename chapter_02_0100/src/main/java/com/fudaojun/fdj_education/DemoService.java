@@ -12,7 +12,6 @@ import android.widget.Toast;
  */
 public class DemoService extends Service{
 
-
     private static final String TAG ="ServiceStatus " ;
     private LocalBinder mBinder = new LocalBinder();
 
