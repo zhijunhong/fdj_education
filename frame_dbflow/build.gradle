@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
+def dbflow_version = "4.1.2"
 
 android {
     compileSdkVersion 25
     buildToolsVersion "26.0.2"
 
     defaultConfig {
-        applicationId "com.fudaojun.app.android.hd.frame_rxjava"
+        applicationId "com.fudaojun.frame_dbflow"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
@@ -27,13 +28,14 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
-    compile project(':fdj_library')
-
-
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'io.reactivex:rxjava:1.1.6'
-    compile 'io.reactivex:rxandroid:1.2.1'
     testCompile 'junit:junit:4.12'
+
+    // if Java use this. If using Kotlin do NOT use this.
+    annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
+    compile "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
+    compile "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
+
+    compile project(':fdj_library')
 }

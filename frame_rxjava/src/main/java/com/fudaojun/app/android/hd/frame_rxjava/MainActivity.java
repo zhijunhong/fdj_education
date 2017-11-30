@@ -3,10 +3,9 @@ package com.fudaojun.app.android.hd.frame_rxjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.fudaojun.fudaojunlib.utils.LibUtils;
-
 import rx.Observable;
 import rx.functions.Action1;
+import utils.LibUtils;
 
 public class MainActivity extends AppCompatActivity {
     String[] mNames = new String[]{"hello", "world", "nihao", "niyehao"};

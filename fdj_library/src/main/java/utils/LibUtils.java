@@ -1,7 +1,9 @@
 package utils;
 
+import android.content.Context;
 import android.os.Looper;
 import android.util.Log;
+import android.widget.Toast;
 
 /**
  * Created by ZhijunHong on 2017/11/30.
@@ -49,5 +51,9 @@ public class LibUtils {
      */
     public static boolean isMainThread() {
         return Looper.getMainLooper() == Looper.myLooper();
+    }
+
+    public static void showToast(Context context, String msg) {
+        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
 }

@@ -5,13 +5,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
-import com.fudaojun.fudaojunlib.utils.LibUtils;
-
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+import utils.LibUtils;
 
 /**
  * Created by ZhijunHong on 2017/11/9.
