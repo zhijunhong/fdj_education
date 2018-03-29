@@ -9,18 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BrocastReceiverActivity">
-            <intent-filter>
+        <activity android:name=".MainActivity">
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <receiver android:name=".OrderedBroadcastReceiver">
             <intent-filter android:priority="100">
                 <action android:name="com.app.nbc.test"></action>
             </intent-filter>
         </receiver>
+
+        <activity android:name="service.MyServiceActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <service android:name="service.DemoService"/>
+        <service android:name="service.MyService"/>
     </application>
 
 </manifest>

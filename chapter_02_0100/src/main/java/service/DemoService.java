@@ -1,4 +1,4 @@
-package com.fudaojun.fdj_education;
+package service;
 
 import android.app.Service;
 import android.content.Intent;
@@ -11,9 +11,6 @@ import android.widget.Toast;
  * Created by luffy on 2016/7/22.
  */
 public class DemoService extends Service{
-
-    private static final String TAG ="ServiceStatus " ;
-    private LocalBinder mBinder = new LocalBinder();
 
     public class LocalBinder extends Binder {
 

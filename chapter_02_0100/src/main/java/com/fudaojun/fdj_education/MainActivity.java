@@ -1,16 +1,22 @@
 package com.fudaojun.fdj_education;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
+    private LifeCircleFragment mLifeCircleFragment = new LifeCircleFragment();
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //测试fragment
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.ft_content, mLifeCircleFragment).commit();
 
         Log.e(TAG, "start onCreate~~~");
     }
